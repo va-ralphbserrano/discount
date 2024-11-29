@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Discount Management System</h1>
+        <form id="discountForm">
+            <label for="originalPrice">Original Price:</label>
+            <input type="number" id="originalPrice" name="originalPrice" required>
+
+            <label for="partnerDiscount">Partner Discount (%):</label>
+            <input type="number" id="partnerDiscount" name="partnerDiscount" required>
+
+            <label for="customerDiscount">Customer Discount (%):</label>
+            <input type="number" id="customerDiscount" name="customerDiscount" required>
+
+            <button type="button" onclick="calculateDiscount()">Calculate Discount</button>
+            <button type="reset">Reset</button>
+        </form>
+
+        <div id="result">
+            <p>Original Price: <span id="displayOriginalPrice"></span></p>
+            <p>Discount Applied: <span id="displayDiscount"></span></p>
+            <p>Total Discount: <span id="displayTotalDiscount"></span></p>
+            <p>Total Discount Percentage: <span id="displayTotalDiscountPercentage"></span></p>
+            <p>Final Price: <span id="displayFinalPrice"></span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
