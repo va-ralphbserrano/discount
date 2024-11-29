@@ -39,6 +39,11 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .header {
