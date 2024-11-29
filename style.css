@@ -1,90 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .container {
+    width: 100%;
     max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 h1 {
-    text-align: center;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 600;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.input-group {
+    margin-bottom: 1.5rem;
 }
 
 label {
-    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
 }
 
-input, select {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
+label i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
 }
 
-input:focus, select:focus {
-    border-color: #007bff;
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-color);
     outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 button {
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
+    flex: 1;
+    padding: 0.8rem;
     border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    padding: 12px 20px;
-    font-size: 18px;
-    margin-right: 10px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-button:hover {
-    background-color: #0056b3;
+button i {
+    margin-right: 0.5rem;
 }
 
-#result {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #e9ecef;
-    border-radius: 5px;
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #357abd;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+.result-section {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    background-color: var(--card-background);
+}
+
+.result-item i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-right: 1rem;
+    width: 24px;
+}
+
+.result-item p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.result-item span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.final-price {
+    margin-top: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.final-price i {
+    color: white;
+}
+
+.final-price span {
+    color: white;
 }
 
 @media (max-width: 600px) {
-    .container {
-        margin: 20px;
-        padding: 15px;
+    .card {
+        padding: 1.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
-    input, select, button {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    #result {
-        padding: 8px;
+    .header-icon {
+        font-size: 2rem;
     }
 }

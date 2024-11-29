@@ -4,31 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discount Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Discount Management System</h1>
-        <form id="discountForm">
-            <label for="originalPrice">Original Price:</label>
-            <input type="number" id="originalPrice" name="originalPrice" required>
+        <div class="card">
+            <div class="header">
+                <i class="fas fa-calculator header-icon"></i>
+                <h1>Discount Calculator</h1>
+            </div>
+            <form id="discountForm">
+                <div class="input-group">
+                    <label for="originalPrice">
+                        <i class="fas fa-tag"></i>
+                        Original Price:
+                    </label>
+                    <input type="number" id="originalPrice" name="originalPrice" placeholder="Enter price" required>
+                </div>
 
-            <label for="partnerDiscount">Partner Discount (%):</label>
-            <input type="number" id="partnerDiscount" name="partnerDiscount" required>
+                <div class="input-group">
+                    <label for="partnerDiscount">
+                        <i class="fas fa-handshake"></i>
+                        Partner Discount (%):
+                    </label>
+                    <input type="number" id="partnerDiscount" name="partnerDiscount" placeholder="Enter partner discount" required>
+                </div>
 
-            <label for="customerDiscount">Customer Discount (%):</label>
-            <input type="number" id="customerDiscount" name="customerDiscount" required>
+                <div class="input-group">
+                    <label for="customerDiscount">
+                        <i class="fas fa-users"></i>
+                        Customer Discount (%):
+                    </label>
+                    <input type="number" id="customerDiscount" name="customerDiscount" placeholder="Enter customer discount" required>
+                </div>
 
-            <button type="button" onclick="calculateDiscount()">Calculate Discount</button>
-            <button type="reset">Reset</button>
-        </form>
+                <div class="button-group">
+                    <button type="button" onclick="calculateDiscount()" class="primary-btn">
+                        <i class="fas fa-calculator"></i> Calculate
+                    </button>
+                    <button type="reset" class="secondary-btn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </form>
 
-        <div id="result">
-            <p>Original Price: <span id="displayOriginalPrice"></span></p>
-            <p>Discount Applied: <span id="displayDiscount"></span></p>
-            <p>Total Discount: <span id="displayTotalDiscount"></span></p>
-            <p>Total Discount Percentage: <span id="displayTotalDiscountPercentage"></span></p>
-            <p>Final Price: <span id="displayFinalPrice"></span></p>
+            <div id="result" class="result-section">
+                <div class="result-item">
+                    <i class="fas fa-receipt"></i>
+                    <p>Original Price: <span id="displayOriginalPrice">$0.00</span></p>
+                </div>
+                <div class="result-item">
+                    <i class="fas fa-percentage"></i>
+                    <p>Discount Applied: <span id="displayDiscount">$0.00</span></p>
+                </div>
+                <div class="result-item">
+                    <i class="fas fa-coins"></i>
+                    <p>Total Discount: <span id="displayTotalDiscount">$0.00</span></p>
+                </div>
+                <div class="result-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <p>Total Discount Percentage: <span id="displayTotalDiscountPercentage">0%</span></p>
+                </div>
+                <div class="result-item final-price">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <p>Final Price: <span id="displayFinalPrice">$0.00</span></p>
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
